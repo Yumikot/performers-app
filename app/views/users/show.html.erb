@@ -3,18 +3,6 @@
 <%= @user.username %>
 <h3>プロフィール</h3>
 <%= @user.email %>
+<p>id:<%= @user.id %></p>
 
-<h1>投稿</h1>
-<%= form_with model: @post, local: true do |form| %>
-    <div>
-    <%= form.label :title, "タイトル" %>
-    <%= form.text_field :title %>
-  </div>
-  <div>
-    <%= form.label :content, "内容" %>
-    <%= form.text_field :content %>
-  </div>
-  <div>
-    <%= form.submit "送信" %>
-  </div>
-<% end %>
+
