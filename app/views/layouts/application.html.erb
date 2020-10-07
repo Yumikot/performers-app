@@ -13,6 +13,7 @@
   <% if user_signed_in? %>
       <!-- ログイン時 -->
       <%= link_to "アカウント編集", edit_user_registration_path %>
+      <%= link_to "投稿一覧", posts_path %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" } %>
     <% else %>
       <!-- 非ログイン時 -->

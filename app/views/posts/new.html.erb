@@ -1,10 +1,4 @@
-<h1><%= @user.username %>のユーザーページ</h1>
-<h3>ユーザー名</h3>
-<%= @user.username %>
-<h3>プロフィール</h3>
-<%= @user.email %>
-
-<h1>投稿</h1>
+<h1>新規投稿</h1>
 <%= form_with model: @post, local: true do |form| %>
     <div>
     <%= form.label :title, "タイトル" %>
