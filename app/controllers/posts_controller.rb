@@ -15,8 +15,7 @@ class PostsController < ApplicationController
             redirect_to posts_path
           else
             render 'posts/new'
-          end
-      end
+        end
     end
 
     def show
@@ -46,5 +45,5 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :content)
     end
-
+  end
 
