@@ -5,16 +5,22 @@ class PostsController < ApplicationController
     end
 
     def create
-        post = Post.create!(post_params)
-        redirect_to post
+        @post = current_user.posts.build(post_params)
+        if @post.save
+            redirect_to posts_path
+          else
+            render 'posts/new'
+          end
+        end
 
     end
 
-    def index
-        @posts = Post.order(id: :asc)
+    def index   
+        @posts = Post.all.order(id: :asc)
     end
 
     def show
+        
        
     end
 
@@ -22,8 +28,7 @@ class PostsController < ApplicationController
        
     end
 
-    def update
-        
+    def update    
         @post.update!(post_params)
         redirect_to @post
     end
@@ -44,4 +49,4 @@ class PostsController < ApplicationController
         params.require(:post).permit(:title, :content)
     end
 
-end
+

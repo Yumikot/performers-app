@@ -1,1 +1,10 @@
+
 <h1>投稿一覧</h1>
+<% if @posts.present? %>
+    <% @posts.each do |post| %>   
+    <%= post.title %>
+        <%= post.content %>
+    <% end %>
+    <% else %>
+    <p>表示できません</p>
+<% end %>
