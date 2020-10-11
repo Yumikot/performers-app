@@ -1,0 +1,7 @@
+<h1>登録カテゴリー一覧</h1>
+<div>
+  <% @categories.each do |category| %>
+    <%= category.id %>
+    <%= category.name %>
+  <% end %>
+</div>

@@ -9,6 +9,10 @@
     <%= form.text_field :content %>
   </div>
   <div>
+    <%= form.label :category_id, "カテゴリー" %>
+    <%= form.collection_select :category_id,Category.all, :id, :name, { prompt: '選択してください' }, class: 'form-control' %>
+  </div>
+  <div>
   <%= form.label :画像 %><br />
   <%= form.file_field :image, class: "image" %>
   </div>

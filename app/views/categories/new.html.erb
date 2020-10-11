@@ -1,0 +1,6 @@
+<h1>Categories新規作成</h1>
+<%= form_with  model: @category, local: true do |f| %>
+    <%= f.label :name, 'カテゴリー名' %>
+    <%= f.text_field :name, class: 'form_control' %>
+    <%= f.submit '追加' %>
+<% end %>
