@@ -1,8 +1,10 @@
-<h1><%= @user.username %>のユーザーページ</h1>
-  <h3>ユーザー名</h3>
-    <%= @user.username %>
+<h1><%= @user.username %>'s page</h1>
+  
+  <h2><%= @user.username %></h2>
+    <img src=<%= @user.profile_image %> class = "icon_image">
   <h3>プロフィール</h3>
     <%= @user.email %>
   <p>id:<%= @user.id %></p>
+  
 
 
