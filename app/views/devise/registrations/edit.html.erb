@@ -2,8 +2,8 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-  <img src=<%= @user.profile_image %> class = "icon_image">
-  
+ 
+
   <div class="field">
     <%= f.label :username%><br />
     <%= f.text_field :username, autofocus: true  %>

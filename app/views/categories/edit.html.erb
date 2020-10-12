@@ -1,2 +1,6 @@
 <h1>Categories#edit</h1>
-<p>Find me in app/views/categories/edit.html.erb</p>
+<%= form_with model: @category, local: true do |f| %>
+    <%= f.label :name, 'カテゴリー名' %>
+    <%= f.text_field :name, class: 'form_control' %>
+    <%= f.submit '保存' %>
+<% end %>

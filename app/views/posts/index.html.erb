@@ -4,6 +4,7 @@
   <p>Title:<%= post.title %></p>
   <p>Content:<%= post.content %></p>
   <p>Image:<%= image_tag(post.image_url, width:100) if post.image?%></p>
+  
   <p>Id:<%= post.user_id%></p>
 
   <%= link_to "詳細", post_path(post.id) %>
