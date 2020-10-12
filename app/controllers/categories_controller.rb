@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: %i[:edit, :update, :destroy]
-  
+  before_action :set_category, only: %i[edit, update, destroy]
+
   def new
     @category = Category.new
   end
@@ -22,11 +22,8 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    if @category.update(category_params)
-      redirect_to categories_path
-    else
-      render 'edit'
-    end
+    @category.update!(category_params)
+    redirect_to categories_path
   end
 
   def destroy
