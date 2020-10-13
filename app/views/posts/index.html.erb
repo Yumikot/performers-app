@@ -3,7 +3,7 @@
 <% @posts.each do |post| %>   
   <p>Title:<%= post.title %></p>
   <p>Content:<%= post.content %></p>
-  <p>Category:<%= post.name %></p>
+  <p>Category:<%= post.category.name %></p>
   <p><%= image_tag(post.image_url, width:100) if post.image?%></p>
   <p>投稿者:<%= post.user.username%></p>
   <%= link_to "詳細", post_path(post.id) %>
