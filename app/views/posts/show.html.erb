@@ -1,6 +1,7 @@
 <h1>投稿詳細</h1>
+  <button class="btn"><%=@post.category.name if @post.category %></button>
 <h3><%= @post.title %></h3>
-<p>カテゴリー：<%=@post.name %></p>
+
 <p>内容 <%= @post.content %></p>
 <%= link_to(@post.user.username,"#") %>
 <p>
