@@ -1,10 +1,13 @@
 <h1>投稿詳細</h1>
-<p><%= @post.title %></p>
+<h3><%= @post.title %></h3>
+<p>カテゴリー：<%=@post.name %></p>
 <p>内容 <%= @post.content %></p>
+<%= link_to(@post.user.username,"#") %>
 <p>
   <%= image_tag(@post.image_url, width:200) if @post.image?%>
 </p>
-
-<%= link_to "削除", @post, method: :delete, data:{confirm: "削除しますか？"} %>
-<%= link_to "編集", edit_post_path(@post) %>
+<% if user_signed_in? && current_user.id == @post.user_id %>
+  <%= link_to "削除", @post, method: :delete, data:{confirm: "削除しますか？"} %>
+  <%= link_to "編集", edit_post_path(@post) %>
+<% end %>
 

@@ -3,13 +3,15 @@
 <% @posts.each do |post| %>   
   <p>Title:<%= post.title %></p>
   <p>Content:<%= post.content %></p>
-  <p>Image:<%= image_tag(post.image_url, width:100) if post.image?%></p>
-  
-  <p>Id:<%= post.user_id%></p>
-
+  <p>Category:<%= post.name %></p>
+  <p><%= image_tag(post.image_url, width:100) if post.image?%></p>
+  <p>投稿者:<%= post.user.username%></p>
   <%= link_to "詳細", post_path(post.id) %>
-  <%= link_to "削除", post, method: :delete, data: {confirm: "削除しますか？"} %>
-  <%= link_to "編集", edit_post_path(post) %>
+
+  <% if user_signed_in? && current_user.id == post.user_id %>
+    <%= link_to "削除", post, method: :delete, data: {confirm: "削除しますか？"} %>
+    <%= link_to "編集", edit_post_path(post) %>
+  <% end %>
 
 <hr>
 <% end %>
