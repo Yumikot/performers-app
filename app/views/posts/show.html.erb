@@ -1,6 +1,15 @@
 <h1>投稿詳細</h1>
 <button type="button" class="btn btn-primary"><%=@post.category.name if @post.category %></button>
 <h2><%= @post.title %></h2>
+<% if current_user.already_liked?(@post) %>
+ <%=button_to 'いいねを消す',post_like_path(@post), method: :delete %>
+<% else %> 
+ <%= button_to 'いいね', post_likes_path(@post)%>
+<% end %>
+<p>いいねしたユーザー</p>
+<% @post.liked_users.each do |user| %>
+  <li><%= user.username %></li>
+<% end %>
 <% if user_signed_in? && current_user.id == @post.user_id %>
 <%= link_to(@post.user.username,"/users/#{@user.id}")%>
 
@@ -8,17 +17,6 @@
   <%= image_tag(@post.image_url, width:200) if @post.image?%>
 </p>
 <p>内容 <%= @post.content %></p>
-
-<% if current_user.already_liked?(@post) %>
- <%=button_to 'いいねを消す',post_like_path(@post), method: :delete %>
-<% else %> 
- <%= button_to 'いいね', post_likes_path(@post)%>
-<% end %>
-<h3>いいねしたユーザー</h3>
-<% @post.liked_users.each do |user| %>
-  <li><%= user.username %></li>
-<% end %>
-
 
 <button type="button" class="btn btn-dark"><%= link_to "削除", @post, method: :delete, data:{confirm: "削除しますか？"} %></button>
 <button type="button" class="btn btn-secondary"><%= link_to "編集", edit_post_path(@post) %></button>

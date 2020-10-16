@@ -13,11 +13,11 @@
   <p>投稿者:<%= post.user.username%></p>
   
   
-  <%= link_to "詳細", post_path(post.id) %>
+  <button type="button" class="btn btn-warning"><%= link_to "詳細", post_path(post.id) %></button>
 
   <% if user_signed_in? && current_user.id == post.user_id %>
-    <%= link_to "削除", post, method: :delete, data: {confirm: "削除しますか？"} %>
-    <%= link_to "編集", edit_post_path(post) %>
+  <button type="button" class="btn btn-dark"><%= link_to "削除", post, method: :delete, data: {confirm: "削除しますか？"} %></button>
+  <button type="button" class="btn btn-secondary"><%= link_to "編集", edit_post_path(post) %></button>
   <% end %>
 <hr>
 <% end %>
