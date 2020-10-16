@@ -2,9 +2,12 @@
 
 <% @posts.each do |post| %>   
   <p>Title:<%= post.title %></p>
-  <p>Content:<%= post.content %></p>
-  <p>Category:<%= post.category.name if post.category %></p>
+ 
+
+
+ <button type="button" class="btn btn-primary"><%= post.category.name if post.category %></button>
   <p><%= image_tag(post.image_url, width:100) if post.image?%></p>
+  <p>Content:<%= post.content %></p>
   
   
   <p>投稿者:<%= post.user.username%></p>

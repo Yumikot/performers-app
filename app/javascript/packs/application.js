@@ -19,3 +19,4 @@ require("channels")
 //= require jquery3
 //= require rails-ujs
 //= require_tree .
+require("bootstrap/dist/js/bootstrap")
