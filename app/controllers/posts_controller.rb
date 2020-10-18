@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
     
     def index   
-      @posts = Post.all.order(id: :desc)   
+      @posts = Post.all.order(id: :desc) 
+      
     end
     
     def new
@@ -34,6 +35,11 @@ class PostsController < ApplicationController
     def destroy
       @post.destroy!
       redirect_to root_path 
+    end
+
+    def search
+      @posts = Post.where('posts.title LIKE(?)', "%#{params[:search]}%").order(created_at: :desc)
+      @search_result = "#{params[:search]}"
     end
 
     private

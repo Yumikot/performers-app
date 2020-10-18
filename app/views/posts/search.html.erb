@@ -1,0 +1,6 @@
+<h2>検索結果</h2>
+    
+    <% @posts.each do |post| %>
+                <p><%= post.title %></p>
+                <p><%= post.content %></p>
+    <% end %>
