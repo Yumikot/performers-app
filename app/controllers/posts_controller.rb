@@ -3,7 +3,7 @@ class PostsController < ApplicationController
     
     def index   
       @posts = Post.all.order(id: :desc) 
-      
+      @posts = Post.all.page(params[:page]).per(8)
     end
     
     def new
@@ -38,7 +38,7 @@ class PostsController < ApplicationController
     end
 
     def search
-      @posts = Post.where('posts.title LIKE(?)', "%#{params[:search]}%").order(created_at: :desc)
+      @posts = Post.where('posts.content LIKE(?)', "%#{params[:search]}%").order(created_at: :desc)
       @search_result = "#{params[:search]}"
     end
 

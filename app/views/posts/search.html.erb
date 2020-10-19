@@ -1,6 +1,21 @@
 <h2>検索結果</h2>
-    
-    <% @posts.each do |post| %>
-                <p><%= post.title %></p>
-                <p><%= post.content %></p>
-    <% end %>
+
+  <% @posts.each do |post| %>
+    <div class="card">
+      <div class="card-body">
+      <button type="button" class="btn btn-primary"><%= post.category.name if post.category %></button>
+        <h3>Title:<%= post.title %></h3>
+        <div class="post_image">
+          <%= image_tag(post.image_url, width:200) if post.image?%>
+        </div>
+       
+        <p class="post_content"><%= truncate(post.content, length: 100) %>
+        <%= link_to "詳細", post_path(post.id) %>
+        </p>
+        <p>投稿者:<%= post.user.username%></p>
+      </div>
+    </div>
+  <% end %>
+  
+
+<button type="button" class="btn btn-success"><%= link_to "戻る",posts_path %></button>
