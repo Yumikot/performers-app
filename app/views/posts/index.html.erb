@@ -1,26 +1,29 @@
-<h1>投稿一覧</h1>
-<div class="search_cont">
-  <%= form_tag(search_path, :method => 'get') do %>
-    <%= text_field_tag :search %>
-    <%= submit_tag '検索' %>
-  <% end %>
+<div class="row justify-content-center">
+  <h1 class="index_title">投稿一覧</h1>
+  <div class="search_cont">
+    <%= form_tag(search_path, :method => 'get') do %>
+      <%= text_field_tag :search %>
+      <%= submit_tag '検索' %>
+    <% end %>
+  </div>
 </div>
 
 <% @posts.each do |post| %> 
   <div class="card">
     <div class="card-body">
       <button type="button" class="btn btn-primary"><%= post.category.name if post.category %></button>
-      <h3>Title:<%= post.title %></h3>
-      <div class="post_image">
-        <%= image_tag(post.image_url, width:200) if post.image?%>
+        <h3>Title:<%= post.title %></h3>
+     
+        <div class="post_image">
+          <%= image_tag(post.image_url, width:200) if post.image?%>
+        </div>
+      
+        <div class="text-wrap"><%= truncate(post.content, length: 100) %>
+        <%= link_to "詳細", post_path(post.id) %>
+       
+        <p>投稿者:<%= post.user.username%></p>
       </div>
-     
-      <p class="post_content"><%= truncate(post.content, length: 100) %>
-      <%= link_to "詳細", post_path(post.id) %>
-      </p>
-      <p>投稿者:<%= post.user.username%></p>
-     
-
+   
       <% if user_signed_in? && current_user.id == post.user_id %>
       <button type="button" class="btn btn-dark"><%= link_to "削除", post, method: :delete, data: {confirm: "削除しますか？"} %></button>
       <button type="button" class="btn btn-secondary"><%= link_to "編集", edit_post_path(post) %></button>

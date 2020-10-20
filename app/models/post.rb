@@ -11,4 +11,11 @@ class Post < ApplicationRecord
   def Post.search(search)
     Post.all
   end
+  def self.category(category_id)
+    if search 
+      Post.where(category_id: category_id)
+    else
+      Post.all
+    end
+  end
 end

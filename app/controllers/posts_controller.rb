@@ -3,7 +3,8 @@ class PostsController < ApplicationController
     
     def index   
       @posts = Post.all.order(id: :desc) 
-      @posts = Post.all.page(params[:page]).per(8)
+      @posts = Post.where(id: params[:category_id]).order(created_at: :desc)
+      @posts = Post.all.page(params[:page]).per(8)  
     end
     
     def new

@@ -1,5 +1,7 @@
 <div> 
- <h1>新規投稿</h1>
+<div class="post_title">
+  <h1 class="new_post">新規投稿</h1>
+</div>
   <%= form_with model: @post, local: true do |form| %>
     <div>
       <%= form.label :title, "タイトル" %>
