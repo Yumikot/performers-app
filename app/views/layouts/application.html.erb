@@ -29,6 +29,12 @@
             <%= link_to "投稿一覧", posts_path %>
             </li>
             <li class="nav-item active">
+              <%= link_to "仕事募集", posts_path(category_id: 6)  %>
+            </li>
+            <li class="nav-item active">
+              <%= link_to "イベント情報", posts_path(category_id: 7) %>
+            </li>
+            <li class="nav-item active">
               <%= link_to "アカウント編集", edit_user_registration_path %><span class="sr-only"></span></a>
             </li>
             <li class="nav-item active">
@@ -52,9 +58,9 @@
     </div>
     
     <footer class="footer">
-    <div class="container">
-      <p class="text-muted">Place sticky footer content here.</p>
-    </div>
+      <div class="container">
+        <p class="text-muted">© Yumiko Tezuka. ALL RIGHTS RESERVED</p>
+      </div>
     </footer>
     
   </body>

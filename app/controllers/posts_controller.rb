@@ -2,9 +2,11 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
     
     def index   
-      @posts = Post.all.order(id: :desc) 
-      @posts = Post.where(id: params[:category_id]).order(created_at: :desc)
-      @posts = Post.all.page(params[:page]).per(8)  
+      if params[:category_id].present?
+        @posts=Post.where(category_id:params[:category_id]).order(created_at: :desc).page(params[:page]).per(8)
+      else
+        @posts=Post.page(params[:page]).per(8)
+      end
     end
     
     def new
