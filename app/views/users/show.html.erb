@@ -6,8 +6,10 @@
 
   <p>id:<%= @user.id %></p>
 
-  <p><%= link_to "プロフィール詳細設定", "#" %></p>
-  
+  <p><%= link_to "プロフィール詳細設定", edit_mypages_path(@user) %></p>
+  <p>職業<%= @user.role %></p>
+  <p>自己紹介<%= @user.description %></p>
+
 
   
 
