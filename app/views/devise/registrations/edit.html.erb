@@ -51,19 +51,6 @@
     <%= f.submit "Update" %>
   </div>
 <% end %>
-<%= form_with model: current_user, url:mypages_path , method: :update, local: true do |f| %>
-  <div>
-  <%= f.label :role, "職業" %>
-  <%= f.text_field :role %>
-  </div>
-  <div>
-  <%= f.label :description, "自己紹介" %>
-  <%= f.text_area :description, size: "40x10" %>
-  </div>
-  <div>
-  <%= f.submit "設定" %>
-</div>
-  <% end %>
 
 <h3>Cancel my account</h3>
 

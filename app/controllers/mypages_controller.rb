@@ -4,8 +4,8 @@ class MypagesController < ApplicationController
     end
 
     def update
-        @user.update!(user_params)
-        redirect_to user_path
+        current_user.update!(user_params)
+        redirect_to user_path(current_user)
     end
 
     private
