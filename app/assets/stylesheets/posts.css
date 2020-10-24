@@ -19,3 +19,7 @@
 .new_post {
   text-align: center;
 }
+
+.posts_content {
+  margin-top: 3rem;
+}

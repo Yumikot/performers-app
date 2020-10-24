@@ -12,55 +12,17 @@
   </head>
   
   <body>
- <div>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-      <a class="navbar-brand" href="#">PerformApp</a>
-      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>  
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-          <% if user_signed_in? %>
-        <!-- ログイン時 -->
-            <li class="nav-item active">
-            <%= link_to "新規投稿", new_post_path %>
-            </li>
-            <li class="nav-item active">
-            <%= link_to "投稿一覧", posts_path %>
-            </li>
-            <li class="nav-item active">
-              <%= link_to "仕事募集", posts_path(category_id: 6)  %>
-            </li>
-            <li class="nav-item active">
-              <%= link_to "イベント情報", posts_path(category_id: 7) %>
-            </li>
-            <li class="nav-item active">
-              <%= link_to "アカウント編集", edit_user_registration_path %><span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item active">
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" } %>
-            </li>
-          <% else %>
-        <!-- 非ログイン時 -->
-            <li class="nav-item active">
-              <%= link_to "ログイン", new_user_session_path %>
-            </li>
-            <li class="nav-item active">
-              <%= link_to "アカウント登録", new_user_registration_path %>
-            </li> 
-          <% end %>
-        </ul>
-      </div>
-    </nav>
-    </div>
+    <header>
+      <%= render 'layouts/header' %>
+    </header>
+   
     <div class="container-lg">
+    <p class="text-center">パフォーマーしたい人と探してる人をつなぐ場所</p>
       <%= yield %>
     </div>
     
     <footer class="footer">
-      <div class="container">
-        <p class="text-muted">© Yumiko Tezuka. ALL RIGHTS RESERVED</p>
-      </div>
+    <%= render 'layouts/footer' %>
     </footer>
     
   </body>
