@@ -1,0 +1,6 @@
+<% @users.each do |user| %> 
+    <p><%= user.username %><p>
+    <% if current_user.admin? && !(current_user == user) %>
+        <%= user.email %>
+    <% end %>
+<% end %>
