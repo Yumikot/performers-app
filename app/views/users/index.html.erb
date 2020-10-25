@@ -1,6 +1,13 @@
-<% @users.each do |user| %> 
-    <p><%= user.username %><p>
-    <% if current_user.admin? && !(current_user == user) %>
-        <%= user.email %>
+    <h1>Members</h1>
+    <% @users.each do |user| %> 
+        <div class="card">
+        <div class="card-body">
+        #プロフィール写真サムネイル
+            <p><%= user.username %><p>
+            <% if current_user.admin? && !(current_user == user) %>
+                <%= user.email %>
+                #削除ボタン設置
+            <% end %>
+        </div>
+        </div>
     <% end %>
-<% end %>

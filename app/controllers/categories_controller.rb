@@ -1,6 +1,12 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[edit update destroy]
+  before_action :user_admin, only: %i[index]
+ 
 
+  def index   
+    @categories = Category.all
+  end  
+  
   def new
     @category = Category.new
   end
@@ -12,10 +18,6 @@ class CategoriesController < ApplicationController
     else
     render 'new'   
     end
-  end
-
-  def index   
-    @categories = Category.all
   end
 
   def edit
@@ -39,5 +41,15 @@ class CategoriesController < ApplicationController
 
     def category_params
       params.require(:category).permit(:name)
-    end  
+    end
+
+    def user_admin
+      @categories = Category.all
+      if  current_user.admin == false
+          redirect_to root_path
+      else
+          render action: "index"
+      end
+   end
+
 end
