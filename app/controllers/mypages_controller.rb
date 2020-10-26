@@ -10,6 +10,6 @@ class MypagesController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:role, :description)
+        params.require(:user).permit(:role, :description, :user_url)
     end
 end

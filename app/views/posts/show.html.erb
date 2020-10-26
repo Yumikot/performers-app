@@ -3,16 +3,19 @@
 
   <button type="button" class="btn btn-primary"><%=@post.category.name if @post.category %></button>
   <h2><%= @post.title %></h2>
+  <div class="like_button">
   <% if current_user.already_liked?(@post) %>
-  <%=button_to 'いいねを消す',post_like_path(@post), method: :delete %>
-  <% else %> 
-  <%= button_to 'いいね', post_likes_path(@post)%>
-  <% end %>
-  <p>いいねしたユーザー:
+    <%=button_to 'いいねを消す',post_like_path(@post), method: :delete %>
+    <% else %> 
+    <%= button_to 'いいね', post_likes_path(@post)%>
+    <% end %>
+  
+  いいねしたユーザー：
   <% @post.liked_users.each do |user| %>
     <%= user.username %>
   <% end %>
-  </p>
+  
+  </div>
   <% if user_signed_in? && current_user.id %>
   <%= link_to(@post.user.username,"/users/#{@user.id}")%>
   <% end %>
@@ -20,7 +23,7 @@
     <%= image_tag(@post.image_url, width:200) if @post.image?%>
   </p>
 
-  <p>内容 <%= raw Rinku.auto_link(@post.content, :all, 'target="_blank"') %></p>
+  <p>内容</p>
   
   <button type="button" class="btn btn-success"><%= link_to "戻る",posts_path %></button>
   <% if user_signed_in? && current_user.id == @post.user_id %>

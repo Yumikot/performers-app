@@ -4,14 +4,13 @@
     <h2><%= @user.username %></h2>
       <img src="<%= @user.profile_image %>" class= "profile_image" >
     <h3>プロフィール</h3>
-
-    
     <% if @user==current_user %>
     <p>id:<%= @user.id %></p>
     <button type="button" class="btn btn-info"><%= link_to "プロフィール詳細設定", edit_mypages_path(@user) %></button>
     <% end %>
     <p>職業:<%= @user.role %></p>
-    <p>自己紹介:<%= raw Rinku.auto_link(@user.description, :all, 'target="_blank"') %></p>
+    <p>自己紹介:<%= @user.description %></p>
+    <p>SNS/HP:<%= @user.user_url %></p>
     
 </div>
 

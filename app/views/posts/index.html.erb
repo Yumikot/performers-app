@@ -19,9 +19,9 @@
         </div>
       
         <div class="text-wrap"><%= truncate(post.content, length: 100) %>
-        <%= link_to "詳細", post_path(post.id) %>
+        <%= link_to "..続きを読む", post_path(post.id) %>
        
-        <p>投稿者:<%= post.user.username%></p>
+        <p>投稿者:<%= link_to(post.user.username,"#")%></p>
       </div>
    
       <% if user_signed_in? && current_user.id == post.user_id %>
