@@ -1,8 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[edit update destroy]
-  before_action :user_admin, only: %i[index]
+  before_action :user_admin
  
-
   def index   
     @categories = Category.all
   end  
@@ -44,12 +43,7 @@ class CategoriesController < ApplicationController
     end
 
     def user_admin
-      @categories = Category.all
-      if  current_user.admin == false
-          redirect_to root_path
-      else
-          render action: "index"
-      end
-   end
+      redirect_to root_path unless current_user.admin
+    end
 
 end

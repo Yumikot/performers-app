@@ -11,7 +11,8 @@
     <button type="button" class="btn btn-info"><%= link_to "プロフィール詳細設定", edit_mypages_path(@user) %></button>
     <% end %>
     <p>職業:<%= @user.role %></p>
-    <p>自己紹介:<%= @user.description %></p>
+    <p>自己紹介:<%= raw Rinku.auto_link(@user.description, :all, 'target="_blank"') %></p>
+    
 </div>
 
 

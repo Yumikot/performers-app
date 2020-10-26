@@ -20,7 +20,8 @@
     <%= image_tag(@post.image_url, width:200) if @post.image?%>
   </p>
 
-  <p>内容 <%= @post.content %></p>
+  <p>内容 <%= raw Rinku.auto_link(@post.content, :all, 'target="_blank"') %></p>
+  
   <button type="button" class="btn btn-success"><%= link_to "戻る",posts_path %></button>
   <% if user_signed_in? && current_user.id == @post.user_id %>
   <button type="button" class="btn btn-dark"><%= link_to "削除", @post, method: :delete, data:{confirm: "削除しますか？"} %></button>
