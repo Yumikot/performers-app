@@ -5,17 +5,15 @@
   <h2><%= @post.title %></h2>
   <div class="like_button">
   <% if current_user.already_liked?(@post) %>
-    <%=button_to 'いいねを消す',post_like_path(@post), method: :delete %>
-    <% else %> 
-    <%= button_to 'いいね', post_likes_path(@post)%>
-    <% end %>
-  
-  いいねしたユーザー：
+  <%=button_to 'いいねを消す',post_like_path(@post), method: :delete %>
+  <% else %> 
+  <%= button_to 'いいね', post_likes_path(@post)%>
+  <% end %>
+  <p>いいねしたユーザー:
   <% @post.liked_users.each do |user| %>
     <%= user.username %>
   <% end %>
-  
-  </div>
+  </p>
   <% if user_signed_in? && current_user.id %>
   <%= link_to(@post.user.username,"/users/#{@user.id}")%>
   <% end %>
@@ -24,6 +22,8 @@
   </p>
 
   <p>内容</p>
+  <p> <%= raw Rinku.auto_link(h(@post.content), :all,'target="_blank"') %></p>
+ 
   
   <button type="button" class="btn btn-success"><%= link_to "戻る",posts_path %></button>
   <% if user_signed_in? && current_user.id == @post.user_id %>

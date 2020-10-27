@@ -10,7 +10,8 @@
     <% end %>
     <p>職業:<%= @user.role %></p>
     <p>自己紹介:<%= @user.description %></p>
-    <p>SNS/HP:<%= @user.user_url %></p>
+    <p>SNS/HP:<%= raw Rinku.auto_link(h(@user.user_url), :all,'target="_blank"') %></p>
+    
     
 </div>
 
