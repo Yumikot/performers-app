@@ -1,27 +1,29 @@
-<div class="text-center"> 
-<div class="post_title">
-  <h1 class="new_post">新規投稿</h1>
-</div>
-  <%= form_with model: @post, local: true do |form| %>
-    <div>
-    <p><%= form.label :title, "タイトル" %></p>
-      <%= form.text_field :title, size: "40x10"%>
+<div class="jumbotron">
+  <div class="text-center"> 
+    <div class="post_title">
+      <h1 class="new_post">新規投稿</h1>
     </div>
-    <div class="main_content_field">
-      <p><%= form.label :content, "内容" %></p>
-      <%= form.text_area :content, size: "40x10" %>
+      <%= form_with model: @post, local: true do |form| %>
+        <div>
+          <p><%= form.label :title, "タイトル" %></p>
+          <%= form.text_field :title, size: "40x10"%>
+        </div>
+        <div class="main_content_field">
+          <p><%= form.label :content, "内容" %></p>
+          <%= form.text_area :content, size: "40x10" %>
+        </div>
+        <div class="cat_content">
+          <%= form.label :category_id, "カテゴリー" %>
+          <%= form.collection_select :category_id,Category.all, :id, :name, { prompt: '選択してください' }, class: 'form-control'%>
+        </div>
+        <div>
+          <%= form.label :画像 %><br />
+          <%= form.file_field :image, class: "image" %>
+        </div>
+        <div class="submit_form">
+          <%= form.submit "送信"%>
+        </div>
+      <% end %>
     </div>
-    <div class="cat_content">
-      <%= form.label :category_id, "カテゴリー" %>
-      <%= form.collection_select :category_id,Category.all, :id, :name, { prompt: '選択してください' }, class: 'form-control'%>
-    </div>
-    <div>
-    <%= form.label :画像 %><br />
-    <%= form.file_field :image, class: "image" %>
-    </div>
-    <div class="submit_form">
-      <%= form.submit "送信"%>
-    </div>
-  <% end %>
-</div>
+  </div>
 </div>
