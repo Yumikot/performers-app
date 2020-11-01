@@ -1,19 +1,20 @@
 
 <div class="text-center">
-
   <button type="button" class="btn btn-primary"><%=@post.category.name if @post.category %></button>
   <h2><%= @post.title %></h2>
   <div class="like_button">
-  <% if current_user.already_liked?(@post) %>
-  <%=button_to 'いいねを消す',post_like_path(@post), method: :delete %>
-  <% else %> 
-  <%= button_to 'いいね', post_likes_path(@post)%>
-  <% end %>
+    <% if current_user.already_liked?(@post) %>
+      <%=button_to 'いいねを消す',post_like_path(@post), method: :delete %>
+    <% else %> 
+      <%= button_to 'いいね', post_likes_path(@post)%>
+    <% end %>
+  </div>
   <p>いいねしたユーザー:
-  <% @post.liked_users.each do |user| %>
-    <%= user.username %>
-  <% end %>
+    <% @post.liked_users.each do |user| %>
+      <%= user.username %>
+    <% end %>
   </p>
+  
   <% if user_signed_in? && current_user.id %>
   <%= link_to(@post.user.username,"/users/#{@user.id}")%>
   <% end %>
@@ -25,7 +26,7 @@
   <p> <%= raw Rinku.auto_link(h(@post.content), :all,'target="_blank"') %></p>
  
   
-  <button type="button" class="btn btn-success"><%= link_to "戻る",posts_path %></button>
+  <button type="button" class="btn btn-outline-success"><%= link_to "戻る",posts_path %></button>
   <% if user_signed_in? && current_user.id == @post.user_id %>
   <button type="button" class="btn btn-dark"><%= link_to "削除", @post, method: :delete, data:{confirm: "削除しますか？"} %></button>
   <button type="button" class="btn btn-secondary"><%= link_to "編集", edit_post_path(@post) %></button>

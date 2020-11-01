@@ -10,8 +10,11 @@
 
 <% @posts.each do |post| %> 
   <div class="card">
+  <div class="card-header">
+  <button type="button" class="btn btn-outline-primary"><%= post.category.name if post.category %></button>
+  </div>
     <div class="card-body">
-      <button type="button" class="btn btn-primary"><%= post.category.name if post.category %></button>
+     
         <h3>Title:<%= post.title %></h3>
      
         <div class="post_image">
