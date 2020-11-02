@@ -29,5 +29,53 @@
     margin-top: 3rem;
 }
 
+#post_title {
+    width: 65%;
+    height: 3vw;
+}
 
+#post_content {
+    width: 65%;
+    height: 10vw;
+}
 
+.cat_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#post_category_id {
+    width: 65%;
+}
+
+@media screen and (max-width:768px){
+    #post_title {
+        width: 100%;
+        height: 5vw;
+    }
+    
+    #post_content {
+        width: 100%;
+        height: 10vw;
+    }
+    
+    #post_category_id {
+        width: 100%;
+    }
+}
+
+.post_show_title {
+    font-size: calc(1em + 1vw);
+    margin-top: 1em;
+}
+
+@media screen and (max-width:768px){
+
+  .post_show_img img{
+      width: 80%;
+      height: auto;
+
+  }
+}

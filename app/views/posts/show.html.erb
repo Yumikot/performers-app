@@ -1,8 +1,24 @@
 
 <div class="text-center">
-  <button type="button" class="btn btn-primary"><%=@post.category.name if @post.category %></button>
-  <h2><%= @post.title %></h2>
-  <div class="like_button">
+  <div class= "posts_content">
+    <button type="button" class="btn btn-primary"><%=@post.category.name if @post.category %></button>
+    <p class="post_show_title"><%= @post.title %></p>
+  
+    <div class="card">
+    <div class="card-body">
+      <% if user_signed_in? && current_user.id %>
+      <%= link_to(@post.user.username,"/users/#{@user.id}")%>
+      <% end %>
+      <div class="post_show_img">
+        <%= image_tag(@post.image_url) if @post.image?%>
+      </div>
+
+      <div class="post_show_content">
+       <p> <%= raw Rinku.auto_link(h(@post.content), :all,'target="_blank"') %></p>
+      </div>
+    </div>
+    </div>
+    <div class="like_button">
     <% if current_user.already_liked?(@post) %>
       <%=button_to 'いいねを消す',post_like_path(@post), method: :delete %>
     <% else %> 
@@ -14,22 +30,12 @@
       <%= user.username %>
     <% end %>
   </p>
-  
-  <% if user_signed_in? && current_user.id %>
-  <%= link_to(@post.user.username,"/users/#{@user.id}")%>
-  <% end %>
-  <p>
-    <%= image_tag(@post.image_url, width:200) if @post.image?%>
-  </p>
-
-  <p>内容</p>
-  <p> <%= raw Rinku.auto_link(h(@post.content), :all,'target="_blank"') %></p>
- 
-  
-  <button type="button" class="btn btn-outline-success"><%= link_to "戻る",posts_path %></button>
-  <% if user_signed_in? && current_user.id == @post.user_id %>
-  <button type="button" class="btn btn-dark"><%= link_to "削除", @post, method: :delete, data:{confirm: "削除しますか？"} %></button>
-  <button type="button" class="btn btn-secondary"><%= link_to "編集", edit_post_path(@post) %></button>
-  <% end %>
+      
+      <button type="button" class="btn btn-outline-success"><%= link_to "戻る",posts_path %></button>
+      <% if user_signed_in? && current_user.id == @post.user_id %>
+      <button type="button" class="btn btn-outline-warning"><%= link_to "削除", @post, method: :delete, data:{confirm: "削除しますか？"} %></button>
+      <button type="button" class="btn btn-outline-danger"><%= link_to "編集", edit_post_path(@post) %></button>
+      <% end %>
+  </div>
 </div>
 

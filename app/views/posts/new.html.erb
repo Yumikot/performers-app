@@ -1,16 +1,16 @@
 <div class="jumbotron">
-  <div class="text-center"> 
+  <div class="text-center post_new_container"> 
     <div class="post_title">
       <h1 class="new_post">新規投稿</h1>
     </div>
       <%= form_with model: @post, local: true do |form| %>
         <div>
           <p><%= form.label :title, "タイトル" %></p>
-          <%= form.text_field :title, size: "40x10"%>
+          <p><%= form.text_field :title%></p>
         </div>
-        <div class="main_content_field">
+        <div class="main_content_field ">
           <p><%= form.label :content, "内容" %></p>
-          <%= form.text_area :content, size: "40x10" %>
+          <%= form.text_area :content %>
         </div>
         <div class="cat_content">
           <%= form.label :category_id, "カテゴリー" %>
