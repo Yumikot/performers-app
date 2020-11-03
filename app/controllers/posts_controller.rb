@@ -32,12 +32,12 @@ class PostsController < ApplicationController
 
     def update  
       @post.update!(post_params)
-      redirect_to root_path
+      redirect_to post_path
     end
 
     def destroy
       @post.destroy!
-      redirect_to root_path 
+      redirect_to posts_path 
     end
 
     def search

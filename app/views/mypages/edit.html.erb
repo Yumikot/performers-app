@@ -1,25 +1,27 @@
 <div class="jumbotron">
-<h1>プロフィール詳細設定</h1>
+<div class="text-center">
+<h2>プロフィール詳細設定</h2>
 
   <%= form_with model: current_user, url:mypages_path , method: :patch, local: true do |f| %>
     <div class="field">
     <%= f.label :profile_image %><br/>
     <%= f.file_field :profile_image %>
     </div>
-    <div>
+    <div class="field">
     <%= f.label :role, "職業" %>
     <%= f.text_field :role %>
     </div>
-    <div>
+    <div class="field">
     <%= f.label :description, "自己紹介" %>
     <%= f.text_area :description, size: "40x10" %>
     </div>
-    <div>
+    <div class="field">
     <%= f.label :user_url, "SNS/HP" %>
     <%= f.text_field :user_url %>
     </div>
-    <div>
+    <div class="field">
     <%= f.submit "設定" %>
   </div>
     <% end %>
+  </div>
   </div>
