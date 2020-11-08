@@ -1,15 +1,64 @@
-<div class="jumbotron">  
-    <h1>PerformersApp</h1>
+<div class="jumbotron toppage">
+  
+    <div class="topmain text-center">
+        <h1>PerformersApp</h1>
 
-    <p>パフォーマーと仕事をつなぐ場所</p>
-    <button type="button" class="btn btn-warning"><%= link_to "Create your account", new_user_registration_path %></button>
-    <h2>How to use</h2>
-    <div>
-        <ol>
-            <li>アカウント作成をして、マイページを登録、ご自身のスキルや自己PRを記載してください</li>
-            <li>パフォーマーの方は告知したいイベントや出演情報などを新規投稿から投稿（もちろん募集をかけることもできます。）</li>
-            <li>仕事を募集したい場合は必ずカテゴリーの仕事募集のカテゴリーを選択して投稿してください</li>
-            <li>興味のある仕事やイベントがあったら"いいね"をしてみてください</li>
-        </ol>
+        <h2 class="sab">パフォーマーと仕事をつなぐ場所</h2>
+        <button type="button" class="btn btn-warning"><%= link_to "Create your account", new_user_registration_path %></button>
     </div>
 </div>
+    <div class="howtouse">
+        
+        <h2 class="text-center">How to use</h2>
+        <div class="cards">
+         
+          <div class="card">
+            <div class="card-body use">
+            <i class="far fa-user fa-5x"></i>
+              <p>アカウント作成をして、マイページを登録、ご自身のスキルや自己PRを記載してください</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body use">
+            <i class="fas fa-desktop fa-5x"></i>
+           
+              <p>パフォーマーの方は告知したいイベントや出演情報などを新規投稿から投稿（もちろん募集をかけることもできます。）</p>
+            </div>
+          </div> 
+          <div class="card">
+            <div class="card-body use">
+            <i class="far fa-handshake fa-5x"></i>
+             <p> 仕事を募集したい場合は必ずカテゴリーの仕事募集のカテゴリーを選択して投稿してください</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body use">
+            <i class="fas fa-heart fa-5x"></i>
+              <p>興味のある仕事やイベントがあったら"いいね"をしてみてください</p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="topabout">
+    <h2>About</h2>
+    <p>新しい出会いのお手伝いをしたいです。</p>
+    <p>パフォーマンスの仕事と同時に企業やお店で仕事
+    をしてきました。</p>
+    <p>そこで気がついたのは、意外と「パフォーマーを
+    どこで頼んでいいのかわからない」で、とりあえず、
+    事務所やツテを頼んで、、ということが多い。</p>
+    <p>また、大手のSNSだと、いろんな投稿に潜ってしまって
+    見つけにくいのでは？と思いました。</p>
+    <p>気軽に巷のクラウドソーシングサイトのように、
+    仕事の発注、アピール、そこでマッチングできる場所があったらいいな〜と思って作ってみました。</p>
+    <p>新たな出会いとアピールと、あなたの世界を広げるために役に立てたら嬉しいです。</p>
+    <p>開発者・Yumiko</p>
+    
+    </div>
+
+    <div class="tourokusuru">
+      <p>アカウント登録をして可能性を広げよう！</p>
+      <button type="button" class="btn btn-danger"><%= link_to "登録する", new_user_registration_path %></button>
+    </div>
+
+
