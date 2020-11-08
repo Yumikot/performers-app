@@ -64,9 +64,39 @@
   margin-top: 1em;
 }
 
+.post_show_img img {
+  width: 70%;
+}
+
 @media screen and (max-width: 768px) {
   .post_show_img img {
     width: 80%;
     height: auto;
+  }
+}
+
+.posts_contet_group {
+  display: flex;
+}
+
+.post_image {
+  width: 30%;
+}
+
+.post_image img {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .posts_contet_group {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .post_image {
+    width: 60%;
+  }
+  .post_image img {
+    width: 100%;
   }
 }

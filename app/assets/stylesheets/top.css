@@ -12,22 +12,31 @@
   color: #fff;
 }
 
+@media screen and (max-width: 498px) {
+  .topmain h1 {
+    font-size: calc(1.5em + 1vw);
+  }
+  .sab {
+    font-size: calc(1.2em + 1vw);
+  }
+}
+
 .topabout {
-  background-color: #FFFFCC;
+  background-color: #FFCC33;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 3em 0;
+  padding: 3em 1em;
 }
 
-.cards {
+.top-cards {
   display: flex;
   justify-content: space-around;
   margin-top: 2em;
 }
 
-.card {
+.top-card {
   width: 22%;
 }
 
@@ -44,13 +53,13 @@
 }
 
 @media screen and (max-width: 768px) {
-  .cards {
+  .top-cards {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
   .card {
-    width: 90%;
+    width: 100%;
   }
 }
 
@@ -59,4 +68,5 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2em 1em;
 }
