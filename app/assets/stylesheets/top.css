@@ -1,5 +1,6 @@
 .toppage {
   background-image: url("art.png");
+  background-size: cover;
 }
 
 .sab {
