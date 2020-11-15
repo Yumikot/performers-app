@@ -15,10 +15,22 @@ html {
     position: relative;
     min-height: 100%;
   }
+
   body {
     /* Margin bottom by footer height */
     margin-bottom: 80px;
   }
+
+  .navbar a {
+    color: #fff;
+  }
+
+  .nav-item {
+    color: #fff;
+  }
+  
+  
+
   .footer {
     position: absolute;
     bottom: 0;

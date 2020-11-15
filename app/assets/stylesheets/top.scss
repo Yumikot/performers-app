@@ -4,6 +4,7 @@
 .toppage {
     background-image: url("art.png");
     background-size: cover;
+    padding: 70px;
 }
 
 .sab {
@@ -127,3 +128,16 @@
     font-size: calc(.8em + 1vw);
     padding-bottom: 1em;
 }
+
+.touroku-btn {
+    padding: 1em 1.5em;
+    border-radius: 10px;
+    background: red;
+    width: 25%;
+    box-shadow: 2px 2px 3px gray;
+}
+
+.touroku-btn a {
+    color: #fff;
+}
+
