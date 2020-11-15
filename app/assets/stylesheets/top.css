@@ -133,3 +133,9 @@
 .touroku-btn a {
   color: #fff;
 }
+
+@media screen and (max-width: 768px) {
+  .touroku-btn {
+    width: 50%;
+  }
+}
