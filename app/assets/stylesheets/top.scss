@@ -26,6 +26,23 @@
     }
 }
 
+.howtouse h2 {
+    position: relative;
+    padding: 1rem;
+    text-align: center;
+}
+
+.howtouse h2:before {
+    position: absolute;
+    bottom: -2px;
+    left: calc(50% - 30px);
+    width: 60px;
+    height: 5px;
+    content: '';
+    border-radius: 3px;
+    background: red;
+}
+
 .topabout {
     background-color: #FFCC33;
     display: flex;
@@ -33,6 +50,33 @@
     flex-direction: column;
     align-items: center;
     padding: 3em 1em;
+    margin: 2em 0;
+}
+
+.topabout h2 {
+    position: relative;
+    padding: 1rem;
+    text-align: center;
+}
+
+.topabout h2:before {
+    position: absolute;
+    bottom: -2px;
+    left: calc(50% - 30px);
+    width: 60px;
+    height: 5px;
+    content: '';
+    border-radius: 3px;
+    background: red;
+  }
+
+.topabout-text {
+    padding: 1em;
+    text-align: center;
+}
+
+.topabout-text p {
+    font-size: 1em;
 }
 
 .top-cards {
@@ -77,4 +121,9 @@
     justify-content: center;
     align-items: center;
     padding: 2em 1em;
+}
+
+.tourokusuru p {
+    font-size: calc(.8em + 1vw);
+    padding-bottom: 1em;
 }
