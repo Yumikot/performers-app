@@ -19,6 +19,7 @@ html {
   body {
     /* Margin bottom by footer height */
     margin-bottom: 80px;
+    background: #000;
   }
 
   .navbar a {
@@ -28,8 +29,6 @@ html {
   .nav-item {
     color: #fff;
   }
-  
-  
 
   .footer {
     position: absolute;
