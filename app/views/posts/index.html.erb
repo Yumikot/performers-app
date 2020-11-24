@@ -24,7 +24,7 @@
         </div>
       
         <div class="text-wrap"><%= truncate(post.content, length: 100) %>
-          <%= link_to " ..続きを読む>>", post_path(post.id) %>  
+         <p><%= link_to " ..続きを読む>>", post_path(post.id) %></p>
           <p>投稿者:<%= post.user.username%></p>
         </div>
       
