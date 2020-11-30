@@ -2,37 +2,40 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .field {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
 }
 
 #contact_name {
-    width: 50%;
+  width: 50%;
 }
 
 #contact_email {
-    width: 50%;
+  width: 50%;
 }
 
 #contact_content {
-    width: 50%;
-    height: 10vw;
+  width: 50%;
+  height: 10vw;
 }
 
-@media screen and (max-width:768px){
+.contact_showpage p {
+  color: #fff;
+}
 
-    #contact_name {
-        width: 80%;
-    }
-    
-    #contact_email {
-        width: 80%;
-    }
-    
-    #contact_content {
-        width: 80%;
-        height: 12vw;
-    }
+@media screen and (max-width: 768px) {
+  #contact_name {
+    width: 80%;
+  }
+
+  #contact_email {
+    width: 80%;
+  }
+
+  #contact_content {
+    width: 80%;
+    height: 12vw;
+  }
 }

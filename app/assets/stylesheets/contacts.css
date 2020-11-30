@@ -18,6 +18,10 @@
   height: 10vw;
 }
 
+.contact_showpage p {
+  color: #fff;
+}
+
 @media screen and (max-width: 768px) {
   #contact_name {
     width: 80%;
