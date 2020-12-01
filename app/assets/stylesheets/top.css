@@ -14,6 +14,11 @@
   color: #fff;
 }
 
+.greeting {
+  color: #ffcc33;
+  font-size: calc(2em + 1vw);
+}
+
 @media screen and (max-width: 498px) {
   .topmain h1 {
     font-size: calc(1.5em + 1vw);
@@ -36,13 +41,13 @@
   left: calc(50% - 30px);
   width: 60px;
   height: 5px;
-  content: '';
+  content: "";
   border-radius: 3px;
   background: red;
 }
 
 .topabout {
-  background-color: #FFCC33;
+  background-color: #ffcc33;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -63,7 +68,7 @@
   left: calc(50% - 30px);
   width: 60px;
   height: 5px;
-  content: '';
+  content: "";
   border-radius: 3px;
   background: red;
 }
@@ -96,7 +101,7 @@
 }
 
 .fa-5x {
-  padding: .2em;
+  padding: 0.2em;
 }
 
 @media screen and (max-width: 768px) {
@@ -119,7 +124,7 @@
 }
 
 .tourokusuru p {
-  font-size: calc(.8em + 1vw);
+  font-size: calc(0.8em + 1vw);
   padding-bottom: 1em;
   color: #fff;
 }

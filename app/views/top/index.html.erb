@@ -3,13 +3,17 @@
   <h1>PerformersApp</h1>
 
   <h2 class="sab">パフォーマーと仕事をつなぐ場所</h2>
-  <button type="button" class="btn btn-warning"><%= link_to "Create your account", new_user_registration_path %></button>
-
+  <% if user_signed_in? %>
+    <h3 class="greeting">Welcome!</h3>
+  
+  <% else %>
+    <button type="button" class="btn btn-warning"><%= link_to "アカウント登録する", new_user_registration_path %></button>
+  <% end %>
   </div>   
 </div>
     <div class="howtouse">
         
-        <h2 class="text-center">How to use</h2>
+        <h2 class="text-center">このサービスの使い方</h2>
         <div class="cards top-cards">
          
           <div class="card top-card">
@@ -40,7 +44,7 @@
       </div>
     </div>
     <div class="topabout">
-      <h2>About</h2>
+      <h2>PerformersAppについて</h2>
       <div class="topabout-text">
         <p>新しい出会いのお手伝いをしたいです。</p>
         <p>パフォーマンスの仕事と同時に企業やお店で仕事
