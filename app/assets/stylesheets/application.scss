@@ -3,71 +3,75 @@
  *= require_self
  */
 
- @import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap";
 
- .nav-item {
-     padding-right: 1rem;
- }
+.nav-item {
+  padding-right: 1rem;
+}
 
- /* Sticky footer styles
+/* Sticky footer styles
 -------------------------------------------------- */
 html {
-    position: relative;
-    min-height: 100%;
-  }
+  position: relative;
+  min-height: 100%;
+}
 
-  body {
-    /* Margin bottom by footer height */
-    margin-bottom: 80px;
-    background: #000;
-  }
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 80px;
+  background: #000;
+}
 
-  .navbar a {
-    color: #fff;
-  }
+.navbar a {
+  color: #fff;
+}
 
-  .nav-item {
-    color: #fff;
-  }
+.nav-item {
+  color: #fff;
+}
 
-  .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 70px;
-    background-color: #f5f5f5;
-  } 
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 70px;
+  background-color: #333;
+  color: #fff;
+}
 
-  .copyright {
-    margin-top: 1em;
-  }
-   
-  /* Custom page CSS
+.copyright {
+  margin-top: 1em;
+}
+
+.fab {
+  color: #ffcc33;
+}
+
+/* Custom page CSS
   -------------------------------------------------- */
-  /* Not required for template or sticky footer method. */
-   
-  .container-lg {
-    width: auto;
-    max-width: 1200px;
-    padding: 0 15px;
-  }
+/* Not required for template or sticky footer method. */
 
-  .container-lg .text-muted {
-    margin: 20px 0;
-  }
+.container-lg {
+  width: auto;
+  max-width: 1200px;
+  padding: 0 15px;
+}
 
-  @media screen and (min-width: 1200px) {
-    .container {
-      width: 1200px;
-    }
-  }
+.container-lg .text-muted {
+  margin: 20px 0;
+}
 
-  .actions {
-    margin-top: 1rem;
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
   }
+}
 
-  .jumbotron {
-    margin-top: 3rem;
-  }
- 
+.actions {
+  margin-top: 1rem;
+}
+
+.jumbotron {
+  margin-top: 3rem;
+}

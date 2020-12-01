@@ -4,7 +4,7 @@
       <img src="<%= @user.profile_image %>" class= "profile_image" >
     <h3>プロフィール</h3>
     <% if @user==current_user %>
-    <p>id:<%= @user.id %></p>
+   
     <button type="button" class="btn btn-warning"><%= link_to "プロフィール詳細設定", edit_mypages_path(@user) %></button>
     <% end %>
     <div class="user_profile">
