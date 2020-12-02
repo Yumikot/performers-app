@@ -7,9 +7,9 @@
     <div class="card">
     <div class="card-body">
     <p class="post_show_title"><%= @post.title %></p>
-      <% if user_signed_in? && current_user.id %>
+     
       <p>投稿者：<%= link_to(@post.user.username,"/users/#{@user.id}")%></p>
-      <% end %>
+      
       <div class="post_show_img">
         <%= image_tag(@post.image_url) if @post.image?%>
       </div>
