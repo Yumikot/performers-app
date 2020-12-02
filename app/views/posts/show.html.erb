@@ -17,16 +17,19 @@
       <div class="post_show_content">
        <p> <%= raw Rinku.auto_link(h(@post.content), :all,'target="_blank"') %></p>
       </div>
-      <div class="like_button">
-    <% if current_user.already_liked?(@post) %>
-      <%=button_to 'いいねを消す',post_like_path(@post), method: :delete %>
-    <% else %> 
-      <%= button_to 'いいね', post_likes_path(@post)%>
-    <% end %>
-    </div>
-    <p>いいねしたユーザー:
-      <% @post.liked_users.each do |user| %>
-        <%= user.username %>
+      <% if user_signed_in? %>
+        <div class="like_button">
+          <% if current_user.already_liked?(@post) %>
+            <%=button_to 'いいねを消す',post_like_path(@post), method: :delete %>
+          <% else %> 
+            <%= button_to 'いいね', post_likes_path(@post)%>
+          <% end %>
+        </div>
+      
+        <p>いいねしたユーザー:
+        <% @post.liked_users.each do |user| %>
+          <%= user.username %>
+        <% end %>
       <% end %>
     </p>
       
