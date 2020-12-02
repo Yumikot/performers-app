@@ -5,9 +5,15 @@ application up and running.
 
 # Performers App
 
-## Ruby version
+heroku
+
+http://performers-app.herokuapp.com
+
+## version
 
 ruby '2.6.6'
+
+Rails 6.0.3.3
 
 ## Services
 
