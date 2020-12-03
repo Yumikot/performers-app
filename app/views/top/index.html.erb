@@ -63,8 +63,13 @@
     </div>
 
     <div class="tourokusuru">
-      <p>アカウント登録をして可能性を広げよう！</p>
-      <button class ="touroku-btn"><%= link_to "登録する", new_user_registration_path %></button>
+      <% if user_signed_in? %>
+      <button class ="touroku-btn"><%= link_to "マイページへ", user_path(current_user) %></button>
+      
+      <% else %>
+        <p>アカウント登録をして可能性を広げよう！</p>
+        <button class ="touroku-btn"><%= link_to "登録する", new_user_registration_path %></button>
+      <% end %>
     </div>
 
 

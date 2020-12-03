@@ -109,6 +109,21 @@
 .topabout-text {
   padding: 1em;
   text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.topabout-text:before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -50px;
+  content: "\f0c0";
+  color: #fff;
+  font-weight: 400;
+  font-size: 100px;
+  font-family: "FontAwesome 6 Free";
+  z-index: -1;
 }
 
 .topabout-text p {
