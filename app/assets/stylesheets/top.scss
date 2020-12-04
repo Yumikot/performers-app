@@ -68,6 +68,7 @@
 .howtouse h2:before {
   left: 0;
 }
+
 .howtouse h2:after {
   right: 0;
 }
@@ -104,6 +105,7 @@
 .topabout h2:before {
   left: 0;
 }
+
 .topabout h2:after {
   right: 0;
 }
@@ -115,18 +117,20 @@
   z-index: 1;
 }
 
-.topabout-text:before {
+.topabout-text::before {
   position: absolute;
+  content: "\f0eb";
+  font-weight: 400;
+  font-family: "Font Awesome 5 Free";
   top: 0;
   left: 50%;
-  margin-left: -50px;
-  content: "\f0c0";
-  color: #fff;
-  font-weight: 400;
-  font-size: 100px;
-  font-family: "FontAwesome 6 Free";
+  margin-left: -60px;
+  color: #FFF8DC;
+  font-size: 180px;
   z-index: -1;
+  opacity: 0.6;
 }
+
 .topabout-text p {
   font-size: 1em;
 }
@@ -162,6 +166,12 @@
 
   .card {
     width: 100%;
+  }
+
+  .topabout-text::before {
+
+    top: 10%;
+
   }
 }
 

@@ -10,19 +10,31 @@
 
 #contact_name {
   width: 50%;
+  border-radius: 10px;
+  padding: 0.5em 1em;
 }
 
 #contact_email {
   width: 50%;
+  border-radius: 10px;
+  padding: 0.5em 1em;
 }
 
 #contact_content {
   width: 50%;
   height: 10vw;
+  border-radius: 10px;
+  padding: 0.5em 1em;
 }
 
 .contact_showpage p {
   color: #fff;
+}
+
+.actions input {
+  background: #ffcc77;
+  padding: 0.5em;
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 768px) {
@@ -36,6 +48,21 @@
 
   #contact_content {
     width: 80%;
-    height: 12vw;
+    height: 15vw;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  #contact_name {
+    width: 90%;
+  }
+
+  #contact_email {
+    width: 90%;
+  }
+
+  #contact_content {
+    width: 90%;
+    height: 20vw;
   }
 }

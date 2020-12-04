@@ -1,9 +1,11 @@
 .profile_image {
   width: 300px;
   height: 300px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .user_profile {
   margin-top: 2rem;
 }
+/*# sourceMappingURL=users.css.map */
