@@ -6,7 +6,8 @@
             <p><%= user.username %><p>
             <% if current_user.admin? && !(current_user == user) %>
                 <%= user.email %>
-                #削除ボタン設置
+                <button class ="adminbtn"><%= link_to "削除","#" %></button>
+                
             <% end %>
         </div>
         </div>
