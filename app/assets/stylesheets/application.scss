@@ -30,6 +30,11 @@ body {
   color: #fff;
 }
 
+.navbar-light,
+.navbar-toggler {
+  border-color: #ffcc33 !important;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
