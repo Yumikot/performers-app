@@ -3,4 +3,5 @@ class ContactMailer < ApplicationMailer
         @contact = contact
         mail to: "ytezuka5@gmail.com",subject: "confirmation"
     end
+    
 end

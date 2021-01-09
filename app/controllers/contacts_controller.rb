@@ -14,26 +14,35 @@ class ContactsController < ApplicationController
     @contact = Contact.new
   end
 
-  
-  def edit
-  end
 
   
   def create
     @contact = Contact.new(contact_params)
 
-    respond_to do |format|
-      if @contact.save
-        format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
-        format.json { render :show, status: :created, location: @contact }
-      else
-        format.html { render :new }
-        format.json { render json: @contact.errors, status: :unprocessable_entity }
-      end
+    if @contact.valid?
+      # OK。確認画面を表示
+      render :action => 'show'
+    else
+      # NG。入力画面を再表示
+      render :action => 'new'
     end
-  
   end
 
+
+  def complete
+    # メール送信
+    @contact = Contact.new(contact_params)
+    if params[:back]
+      render :action => 'index'
+    else
+      ContactMailer.send_mail(@contact).deliver
+      # 完了画面を表示
+      render :action => 'complete'
+    end
+  end
+
+  def edit
+  end
   
   def update
     respond_to do |format|
