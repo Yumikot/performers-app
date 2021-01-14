@@ -90,9 +90,8 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   require 'carrierwave/orm/activerecord'
-  config.cache_classes = true
-  config.public_file_server.enabled = true
   
+
 config.action_mailer.raise_delivery_errors = true
 config.action_mailer.delivery_method = :smtp
 host = 'https://performers-app.herokuapp.com/'
@@ -106,7 +105,7 @@ ActionMailer::Base.smtp_settings = {
   :domain         => 'gmail.com',
   #:enable_starttls_auto => true
 }
-config.active_storage.service = :amazon
+
 
 
   # Inserts middleware to perform automatic connection switching.
