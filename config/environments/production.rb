@@ -97,15 +97,15 @@ config.action_mailer.delivery_method = :smtp
 host = 'https://performers-app.herokuapp.com/'
 config.action_mailer.default_url_options = { host: host }
 ActionMailer::Base.smtp_settings = {
-  :address        => "smtp.gmail.com",
-  :port           => '587',
-  :authentication => :plain,
-  :user_name      => ENV['GMAIL_USERNAME'],
-  :password       => ENV['GMAIL_PASSWORD'],
-  :domain         => 'gmail.com',
-  #:enable_starttls_auto => true
+  user_name: ENV['SENDGRID_USERNAME'],
+    password: ENV['SENDGRID_PASSWORD'],
+    domain: "heroku.com",
+    address: "smtp.sendgrid.net",
+    port: 587,
+    authentication: :plain,
+    enable_starttls_auto: true
 }
-
+config.action_mailer.perform_caching = false
 
 
   # Inserts middleware to perform automatic connection switching.
