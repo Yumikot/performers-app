@@ -3,7 +3,13 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
+  before_action :ensure_normal_user, only: %i[update destroy]
 
+  def ensure_normal_user
+    if resource.email == "guest@example.com"
+      redirect_to root_path, alert: "ゲストユーザーは削除編集できません。"
+    end
+  end
   protected
   # アカウント編集後、プロフィール画面に移動する
   def after_update_path_for(resource)
