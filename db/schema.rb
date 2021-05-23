@@ -29,13 +29,6 @@ ActiveRecord::Schema.define(version: 2020_10_29_033933) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "inquiries", force: :cascade do |t|
-    t.string "name"
-    t.string "message"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "likes", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "post_id", null: false
